@@ -115,6 +115,7 @@ Page({
     app.globalData.api.saveUserinfo(obj).then(res => {
       console.log('确定的结果', res)
       if (res.errMsg === 'collection.add:ok' || res.errMsg === 'collection.update:ok') {
+        wx.setStorageSync('userinfo', obj)
         wx.showToast({
           title: '提交成功！',
           success: function () {

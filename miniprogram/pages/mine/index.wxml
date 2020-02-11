@@ -1,2 +1,22 @@
 <!--miniprogram/pages/mine/index.wxml-->
-<text>miniprogram/pages/mine/index.wxml</text>
+<view class="nav">
+  <view class="{{choose=='nav1' ? 'active' : ''}}" bindtap="chooseNav1">求助历史</view>
+  <view class="{{choose=='nav2' ? 'active' : ''}}" bindtap="chooseNav2">救助历史</view>
+</view>
+
+<view class="nav1" wx:if="{{choose=='nav1'}}">
+  <view class="one-help" wx:for="{{myapplyHelps}}" bindtap="goDetail" data-helpid="{{item._id}}">
+    <view class="title">
+      <view class="left">{{item.city}}-{{item.area}} {{item.addr}}</view>
+      <view class="right">求助中</view>
+    </view>
+    <!-- <view class="timeleft">还剩2天12小时</view> -->
+    <view class="tag">{{item.num}}只{{item.type}}</view>
+    <view class="content">{{item.feed}}</view>
+  </view>
+  
+</view>
+<view class="nav1" wx:if="{{choose=='nav2'}}">
+  <view class="nodata">暂无数据</view>
+</view>
+

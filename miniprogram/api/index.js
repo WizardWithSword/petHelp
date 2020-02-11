@@ -1,5 +1,6 @@
 const api = {}
 const db = wx.cloud.database()
+const _ = db.command
 const uid = wx.getStorageSync('uid') || ''
 api.save = function (name, data) {}
 
@@ -36,4 +37,37 @@ api.saveUserinfo = function (data) {
     }
   })
 }
+
+/* 新增帮助 */
+api.applyHelp = function (data) {
+  return db.collection('help').add({
+    data: { ...data }
+  })
+}
+/* 首页查询帮助列表 */
+api.getHelps = function (where) {
+  return db.collection('help').where(where).orderBy('createtime', 'desc').get()
+}
+
+/* 获取我愿意帮助的求助id列表 */
+api.getMyHelpsForOther = function () {
+  let u = wx.getStorageSync('uid') || ''
+  return db.collection('helpAccept').where({
+    helpUid: u
+  }).get().then(res => {
+    if (res.data.length > 0) {
+      let ids = []
+      ids = res.data.map(item=>{
+        return item.helpId
+      })
+      return db.collection('help').where({
+        _id:_.in(ids)
+      })
+    } else {
+      return []
+    }
+  })
+}
+
+
 module.exports = api

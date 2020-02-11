@@ -149,7 +149,16 @@ Page({
         }
       })
     } else {
-      submit()
+      app.globalData.api.applyHelp(obj).then(res => {
+        wx.showToast({
+          title: '提交成功',
+          success: function () {
+            wx.navigateTo({
+              url: '/pages/mine/index',
+            })
+          }
+        })
+      })
     }
   }
 })

@@ -1,10 +1,14 @@
 // miniprogram/pages/mine/index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    choose: 'nav1',
+    myapplyHelps: [],
+    myHelpsForOther: [],
 
   },
 
@@ -26,7 +30,32 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this._getList()
 
+  },
+  _getList () {
+    if (this.data.choose === 'nav1') {
+      let obj = {}
+      obj._openid = wx.getStorageSync('uid')
+      app.globalData.api.getHelps(obj).then(res => {
+        console.log('获取到的list', res)
+        this.setData({
+          myapplyHelps: res.data || []
+        })
+      })      
+    } else {
+      app.globalData.api.getMyHelpsForOther().then(res => {
+        this.setData({
+          myHelpsForOther: res.data || []
+        })
+      })
+    }
+  },
+  goDetail(e) {
+    let id = e.currentTarget.dataSet.helpid
+    wx.navigateTo({
+      url: '/pages/help/detail?id='+id,
+    })
   },
 
   /**
@@ -55,6 +84,18 @@ Page({
    */
   onReachBottom: function () {
 
+  },
+  chooseNav1 (str) {
+    this.setData({
+      choose: 'nav1'
+    })
+    this._getList()
+  },
+  chooseNav2(str) {
+    this.setData({
+      choose: 'nav2'
+    })
+    this._getList()
   },
 
   /**

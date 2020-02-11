@@ -1,1 +1,96 @@
 /* miniprogram/pages/mine/index.wxss */
+.nav{
+  color:rgba(155,155,155,1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size:28rpx;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+}
+.active{
+  width:112rpx;
+  height:40rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(12,12,12,1);
+  line-height:40rpx;
+}
+
+.one-help{
+  width: 670rpx;
+  margin: 0 auto;
+  border-bottom: 2rpx solid #F7F7F7;
+  padding: 22rpx 0 30rpx 0;
+}
+.one-help .title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.one-help .title .left{
+  width:394rpx;
+  font-size:36rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+  line-height:50rpx;
+  height: 100rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.one-help .title .right{
+  width:96rpx;
+  height:44rpx;
+  font-size:32rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(255,65,14,1);
+  line-height:44rpx;
+}
+.one-help .title .done{
+  color: #9B9B9B;
+}
+.one-help .tag{
+  height:52rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 2rpx 8rpx 8rpx rgba(0,0,0,0.03);
+  border-radius:8rpx;
+  padding: 0  26rpx;
+  line-height: 52rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(155,155,155,1);
+  display: inline-block;
+  margin-bottom: 30rpx;
+  margin-top: 22rpx;
+}
+.one-help .timeleft{
+  height:40rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+  line-height:40rpx;
+}
+.one-help .content{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(155,155,155,1);
+  line-height:40rpx;
+  max-height: 120rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.nodata{
+  text-align: center;
+  color: #ccc;
+}
