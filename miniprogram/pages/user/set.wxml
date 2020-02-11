@@ -1,0 +1,26 @@
+<!--miniprogram/pages/user/set.wxml-->
+<view class="h1">身份联系信息</view>
+<view class="form">
+  <view class="form-title">您的姓名</view>
+  <input class="input" value="{{name}}" bindinput="inputName" type="number" placeholder="请输入姓名"></input>
+</view>
+<view class="form">
+  <view class="form-title">您的电话号码</view>
+  <input class="input" value="{{phone}}" bindinput="inputPhone" type="number" placeholder="请输入电话号码"></input>
+</view>
+<view class="form">
+  <view class="form-title">您的微信</view>
+  <input class="input" value="{{wechat}}" bindinput="inputWechat" type="number" placeholder="请输入微信号"></input>
+</view>
+<view class="form">
+  <view class="form-title">您的地址</view>
+  <!-- <input class="input" value="{{type}}" bindinput="inputType" type="number" placeholder="请输入姓名"></input> -->
+    <picker class="area" mode="region" bindchange="chooseArea" value="{{region}}">
+      <view class="picker">
+        <image class="icon-location" src="../../images/icon-location.png"></image>
+        {{region[0]}} {{region[1]}} {{region[2]}}
+      </view>
+    </picker>
+    <input class="input ti30" value="{{addr}}" bindinput="inputAddr" type="text" placeholder="请输入您的地址"></input>
+</view>
+<view bindtap="submit" class="btn mt120">确定</view>

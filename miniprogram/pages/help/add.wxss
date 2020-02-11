@@ -1,0 +1,82 @@
+/* miniprogram/pages/help/add.wxss */
+page{
+  padding: 40rpx;
+}
+.h1{
+  height:74rpx;
+  font-size:52rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+  line-height:74rpx;
+}
+.progress-bg{
+  width:100%;
+  height:8rpx;
+  background:rgba(246,246,246,1);
+  border-radius:4rpx;
+  margin:0 auto;
+  margin-top: 36rpx;
+}
+.progress-length{
+  height:8rpx;
+  background:rgba(255,65,14,1);
+  border-radius:4rpx;
+}
+.step1{
+  width: 222rpx;
+}
+.step2{
+  width: 600rpx;
+}
+.form{
+  margin-top: 60rpx;
+}
+.form-title{
+  height:56rpx;
+  font-size:40rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  color:rgba(0,0,0,1);
+  line-height:56rpx;
+}
+.form-title-tip{
+  height:34rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(200,200,200,1);
+  line-height:34rpx;
+  margin-left: 20rpx;
+  display: inline-block;
+}
+.area{
+  width: 500rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.picker{
+
+}
+.icon-location{
+  width: 24rpx;
+  height: 24rpx;
+  display: inline-block
+}
+.input{
+  width: 600rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  border-bottom: 2rpx solid #E5E5E5;
+}
+.ti30{
+  text-indent: 30rpx;  
+}
+.mt600{
+  margin-top: 600rpx;
+}
+.bigtxt{
+  margin-top: 22rpx;
+  height: 130rpx;
+  width: 600rpx;
+}

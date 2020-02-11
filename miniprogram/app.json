@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/help/add",
+    "pages/index/index",
+    "pages/user/set",
+    "pages/mine/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "求助信息",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#010101",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "./images/help.png",
+        "selectedIconPath": "./images/help.png",
+        "text": "求助"
+      },
+      {
+        "pagePath": "pages/help/add",
+        "iconPath": "./images/add.png",
+        "selectedIconPath": "./images/add.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "iconPath": "./images/record.png",
+        "selectedIconPath": "./images/record.png",
+        "text": "记录"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

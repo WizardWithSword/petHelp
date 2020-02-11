@@ -1,0 +1,39 @@
+<!--miniprogram/pages/help/add.wxml-->
+<view class="h1">求助信息发布</view>
+<view class="progress-bg">
+  <view class="progress-length {{step}}"></view>
+</view>
+
+<view class="step1" wx:if="{{step == 'step1'}}">
+  <view class="form">
+    <view class="form-title">您的地址</view>
+    <picker class="area" mode="region" bindchange="chooseArea" value="{{region}}">
+      <view class="picker">
+        <image class="icon-location" src="../../images/icon-location.png"></image>
+        {{region[0]}} {{region[1]}} {{region[2]}}
+      </view>
+    </picker>
+    <input class="input ti30" value="{{addr}}" bindinput="inputAddr" type="text" placeholder="请输入详细求助地址（小区名字、楼栋）"></input>
+  </view>
+  <view bindtap="goNext" class="btn mt600">下一步</view>
+</view>
+
+<view class="step2" wx:if="{{step == 'step2'}}">
+  <view class="form">
+    <view class="form-title">数量</view>
+    <input class="input" value="{{num}}" bindinput="inputNum" type="number" placeholder="请输入数量"></input>
+  </view>
+  <view class="form">
+    <view class="form-title">品种 <view class="form-title-tip">如：猫、狗</view></view>
+    <input class="input" value="{{type}}" bindinput="inputType" type="number" placeholder="请输入品种"></input>
+  </view>
+  <view class="form">
+    <view class="form-title">如何进入 <view class="form-title-tip">使用钥匙或密码，钥匙是否需要快递</view></view>
+    <textarea class="bigtxt" bindblur="inputHowInto" placeholder="描述下如何进入房间…" maxlength="256"/>
+  </view>
+  <view class="form">
+    <view class="form-title">细节描述 <view class="form-title-tip">放多少粮和水，有哪里需要注意</view></view>
+    <textarea class="bigtxt" bindblur="inputHowFeed" placeholder="描述下需要如何照顾…"  maxlength="256"/>
+  </view>
+  <view bindtap="submit" class="btn mt20">提交</view>
+</view>
